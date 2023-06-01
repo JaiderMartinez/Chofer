@@ -26,6 +26,7 @@ public class DriverServiceImpl implements IDriverService {
 
     @Override
     public DriverWithoutIdResponseDto saveDriver(DriverRequestDto driverRequestDto) {
+        //Modificacion aqui
         return driverEntityMapper.toDriverWithoutIdResponse(
                 driverRepository.save(driverEntityMapper.toDriverEntity(driverRequestDto)));
     }
@@ -44,7 +45,7 @@ public class DriverServiceImpl implements IDriverService {
 
     @Override
     public List<DriverResponseDto> findAllByStatusDriver() {
-        return null;
+        return driverRepository.findAll();
     }
 
     @Override
